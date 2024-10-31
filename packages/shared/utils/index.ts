@@ -1,5 +1,5 @@
 import { getCurrentInstance } from 'vue-demi'
-
+export { createDefu as createMerge, defu as merge } from './defu';
 export * from './compatibility'
 export * from './filters'
 export * from './is'

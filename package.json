@@ -19,6 +19,7 @@
     "@rollup/plugin-replace": "catalog:",
     "@vue-toolskit/core": "workspace:*",
     "@vue-toolskit/metadata": "workspace:*",
+    "@vue-toolskit/integrations": "workspace:*",
     "@vue-toolskit/shared": "workspace:*",
     "@types/fs-extra": "catalog:",
     "@types/node": "catalog:",

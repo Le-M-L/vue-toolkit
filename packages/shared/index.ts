@@ -1,3 +1,5 @@
+export * from './createSharedComposable'
 export * from './toRef'
 export * from './toValue'
+export * from './tryOnScopeDispose'
 export * from './utils'

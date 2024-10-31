@@ -1,9 +1,18 @@
-<script setup lang="ts">
-import { useMouse } from '@vue-toolskit/core'
+<script setup lang="ts" >
+import { $t, loadLocaleMessages } from '../src/locales/index'
+// import axios from 'axios'
+const handleClick = () => {
+  loadLocaleMessages('en-US')
+}
 
-const { x, y } = useMouse()
 </script>
 
 <template>
-  <div>{{ x }}, {{ y }}</div>
+  <div>
+     {{ $t('ui.test') }}
+     
+     <!-- <d.UIButton></d.UIButton>  -->
+    <button @click="handleClick" >测试</button>
+  
+  </div>
 </template>

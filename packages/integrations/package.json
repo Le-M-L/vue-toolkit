@@ -1,0 +1,116 @@
+{
+  "name": "@vue-toolskit/integrations",
+  "version": "1.0.0",
+  "author": "",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vue-use",
+    "utils"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    },
+    "./*": "./*",
+    "./useAsyncValidator": {
+      "import": "./useAsyncValidator.mjs",
+      "require": "./useAsyncValidator.cjs"
+    },
+    "./useAxios": {
+      "import": "./useAxios.mjs",
+      "require": "./useAxios.cjs"
+    },
+    "./useCookies": {
+      "import": "./useCookies.mjs",
+      "require": "./useCookies.cjs"
+    },
+    "./useDrauu": {
+      "import": "./useDrauu.mjs",
+      "require": "./useDrauu.cjs"
+    },
+    "./useFocusTrap": {
+      "import": "./useFocusTrap.mjs",
+      "require": "./useFocusTrap.cjs"
+    },
+    "./useFocusTrap/component": {
+      "import": "./useFocusTrap/component.mjs",
+      "require": "./useFocusTrap/component.cjs"
+    },
+    "./useFuse": {
+      "import": "./useFuse.mjs",
+      "require": "./useFuse.cjs"
+    },
+    "./useJwt": {
+      "import": "./useJwt.mjs",
+      "require": "./useJwt.cjs"
+    },
+    "./useNProgress": {
+      "import": "./useNProgress.mjs",
+      "require": "./useNProgress.cjs"
+    },
+    "./useQRCode": {
+      "import": "./useQRCode.mjs",
+      "require": "./useQRCode.cjs"
+    },
+    "./useChangeCase": {
+      "import": "./useChangeCase.mjs",
+      "require": "./useChangeCase.cjs"
+    },
+    "./useAsyncValidator/component": {
+      "import": "./useAsyncValidator/component.mjs",
+      "require": "./useAsyncValidator/component.cjs"
+    },
+    "./useIDBKeyval": {
+      "import": "./useIDBKeyval.mjs",
+      "require": "./useIDBKeyval.cjs"
+    },
+    "./useSortable": {
+      "import": "./useSortable.mjs",
+      "require": "./useSortable.cjs"
+    },
+    "./useSortable/component": {
+      "import": "./useSortable/component.mjs",
+      "require": "./useSortable/component.cjs"
+    },
+    "./useLocale": {
+      "import": "./useLocale.mjs",
+      "require": "./useLocale.cjs"
+    },
+    "./useRequest": {
+      "import": "./useRequest.mjs",
+      "require": "./useRequest.cjs"
+    }
+  },
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "unpkg": "./index.iife.min.js",
+  "jsdelivr": "./index.iife.min.js",
+  "types": "./index.d.cts",
+  "peerDependencies": {
+    "vue-i18n": "^10",
+    "axios": "^1"
+  },
+  "peerDependenciesMeta": {
+    "vue-i18n": {
+      "optional": true
+    },
+    "axios": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@vue-toolskit/core": "workspace:*",
+    "@vue-toolskit/shared": "workspace:*",
+    "@vue-toolskit/integrations": "workspace:*",
+    "@intlify/core-base": "catalog:",
+    "vue-i18n": "catalog:",
+    "vue-demi": "catalog:"
+  },
+  "devDependencies": {
+    "axios": "catalog:"
+  },
+  "description": "Integration wrappers for utility libraries"
+}

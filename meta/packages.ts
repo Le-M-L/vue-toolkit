@@ -28,5 +28,23 @@ export const packages: PackageManifest[] = [
       '@vue-toolskit/shared',
     ],
   },
+  {
+    name: 'integrations',
+    display: 'Integrations',
+    description: 'Integration wrappers for utility libraries',
+    addon: true,
+    submodules: true,
+    external: [
+      'axios',
+      'vue-i18n',
+      '@vue-toolskit/core',
+      '@vue-toolskit/shared',
+      '@vue-toolskit/integrations',
+    ],
+    globals: {
+      'axios': 'axios',
+      'vue-i18n': 'vue-i18n'
+    },
+  },
 
 ]

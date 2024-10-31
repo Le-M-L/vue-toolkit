@@ -13,11 +13,13 @@
     "@vue-toolskit/core": "file:../../packages/core/dist",
     "@vue-toolskit/metadata": "file:../../packages/metadata/dist",
     "@vue-toolskit/shared": "file:../../packages/shared/dist",
+    "@vue-toolskit/integrations": "file:../../packages/integrations/dist",
     "vite": "^5.4.6"
   },
   "resolutions": {
     "@vue-toolskit/core": "file:../../packages/core/dist",
     "@vue-toolskit/metadata": "file:../../packages/metadata/dist",
+    "@vue-toolskit/integrations": "file:../../packages/integrations/dist",
     "@vue-toolskit/shared": "file:../../packages/shared/dist"
   }
 }
