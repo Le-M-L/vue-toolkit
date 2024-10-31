@@ -8,14 +8,14 @@
     "module": "esnext",
     "moduleResolution": "Bundler",
     "paths": {
-      "@toolkit/core": ["./packages/core/index.ts"],
-      "@toolkit/core/*": ["./packages/core/*"],
-      "@toolkit/docs-utils": ["./packages/.vitepress/plugins/utils.ts"],
-      "@toolkit/integrations": ["./packages/integrations/index.ts"],
-      "@toolkit/metadata": ["./packages/metadata/index.ts"],
-      "@toolkit/math": ["./packages/math/index.ts"],
-      "@toolkit/shared": ["./packages/shared/index.ts"],
-      "@toolkit/shared/*": ["./packages/shared/*"]
+      "@toolskit/core": ["./packages/core/index.ts"],
+      "@toolskit/core/*": ["./packages/core/*"],
+      "@toolskit/docs-utils": ["./packages/.vitepress/plugins/utils.ts"],
+      "@toolskit/integrations": ["./packages/integrations/index.ts"],
+      "@toolskit/metadata": ["./packages/metadata/index.ts"],
+      "@toolskit/math": ["./packages/math/index.ts"],
+      "@toolskit/shared": ["./packages/shared/index.ts"],
+      "@toolskit/shared/*": ["./packages/shared/*"]
     },
     "resolveJsonModule": true,
     "types": [

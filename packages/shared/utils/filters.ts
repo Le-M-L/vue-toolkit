@@ -20,7 +20,7 @@ export interface ConfigurableEventFilter {
   /**
    * Filter for if events should to be received.
    *
-   * @see https://toolkit.org/guide/config.html#event-filters
+   * @see https://toolskit.org/guide/config.html#event-filters
    */
   eventFilter?: EventFilter
 }

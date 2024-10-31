@@ -10,8 +10,8 @@ export default defineConfig(({ command }) => ({
     ? {}
     : {
         alias: {
-          '@toolkit/core': resolve(__dirname, '../../packages/core/index.ts'),
-          '@toolkit/shared': resolve(__dirname, '../../packages/shared/index.ts'),
+          '@toolskit/core': resolve(__dirname, '../../packages/core/index.ts'),
+          '@toolskit/shared': resolve(__dirname, '../../packages/shared/index.ts'),
         },
       },
   build: {
@@ -19,8 +19,8 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          if (id.includes('@toolkit/'))
-            return 'toolkit'
+          if (id.includes('@toolskit/'))
+            return 'toolskit'
           else
             return 'vendor'
         },

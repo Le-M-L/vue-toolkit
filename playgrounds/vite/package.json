@@ -10,14 +10,14 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
-    "@toolkit/core": "file:../../packages/core/dist",
-    "@toolkit/metadata": "file:../../packages/metadata/dist",
-    "@toolkit/shared": "file:../../packages/shared/dist",
+    "@toolskit/core": "file:../../packages/core/dist",
+    "@toolskit/metadata": "file:../../packages/metadata/dist",
+    "@toolskit/shared": "file:../../packages/shared/dist",
     "vite": "^5.4.6"
   },
   "resolutions": {
-    "@toolkit/core": "file:../../packages/core/dist",
-    "@toolkit/metadata": "file:../../packages/metadata/dist",
-    "@toolkit/shared": "file:../../packages/shared/dist"
+    "@toolskit/core": "file:../../packages/core/dist",
+    "@toolskit/metadata": "file:../../packages/metadata/dist",
+    "@toolskit/shared": "file:../../packages/shared/dist"
   }
 }

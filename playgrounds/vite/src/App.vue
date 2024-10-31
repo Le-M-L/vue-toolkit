@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMouse } from '@toolkit/core'
+import { useMouse } from '@toolskit/core'
 
 const { x, y } = useMouse()
 </script>

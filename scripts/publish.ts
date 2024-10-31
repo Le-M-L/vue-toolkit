@@ -13,5 +13,5 @@ if (version.includes('beta'))
 
 for (const { name } of packages) {
   execSync(command, { stdio: 'inherit', cwd: path.join('packages', name, 'dist') })
-  consola.success(`Published @toolkit/${name}`)
+  consola.success(`Published @toolskit/${name}`)
 }

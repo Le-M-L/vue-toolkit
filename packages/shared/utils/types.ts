@@ -19,7 +19,7 @@ export type RemovableRef<T> = Omit<Ref<T>, 'value'> & {
 }
 
 // Vue 2 does not expose `MaybeRef` and `MaybeRefOrGetter` types,
-// so we need to maintain these types within toolkit.
+// so we need to maintain these types within toolskit.
 // Ensure they are kept in sync with Vue 3 updates.
 
 /**

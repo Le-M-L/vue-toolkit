@@ -11,7 +11,7 @@ Normalize value/ref/getter to `ref` or `computed`.
 ## Usage
 
 ```ts
-import { toRef } from '@toolkit/core'
+import { toRef } from '@toolskit/core'
 
 const foo = ref('hi')
 

@@ -4,11 +4,11 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   resolve: {
     alias: {
-      '@toolkit/shared': resolve(__dirname, 'packages/shared/index.ts'),
-      '@toolkit/core': resolve(__dirname, 'packages/core/index.ts'),
-      '@toolkit/math': resolve(__dirname, 'packages/math/index.ts'),
-      '@toolkit/components': resolve(__dirname, 'packages/components/index.ts'),
-      '@toolkit/docs-utils': resolve(__dirname, 'packages/.vitepress/plugins/utils.ts'),
+      '@toolskit/shared': resolve(__dirname, 'packages/shared/index.ts'),
+      '@toolskit/core': resolve(__dirname, 'packages/core/index.ts'),
+      '@toolskit/math': resolve(__dirname, 'packages/math/index.ts'),
+      '@toolskit/components': resolve(__dirname, 'packages/components/index.ts'),
+      '@toolskit/docs-utils': resolve(__dirname, 'packages/.vitepress/plugins/utils.ts'),
     },
     dedupe: [
       'vue',
@@ -37,7 +37,7 @@ export default defineConfig({
   },
   ssr: {
     noExternal: [
-      /@toolkit\/.*/,
+      /@toolskit\/.*/,
     ],
   },
 })

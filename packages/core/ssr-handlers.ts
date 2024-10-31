@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-import type { Awaitable } from '@toolkit/shared'
+import type { Awaitable } from '@toolskit/shared'
 import type { MaybeElementRef } from './unrefElement'
 
 export interface StorageLikeAsync {
@@ -34,7 +34,7 @@ const _global
           ? self
           : {}
 
-const globalKey = '__toolkit_ssr_handlers__'
+const globalKey = '__toolskit_ssr_handlers__'
 const handlers = /* #__PURE__ */ getHandlers()
 
 function getHandlers() {

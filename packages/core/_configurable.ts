@@ -1,4 +1,4 @@
-import { isClient } from '@toolkit/shared'
+import { isClient } from '@toolskit/shared'
 
 export interface ConfigurableWindow {
   /*

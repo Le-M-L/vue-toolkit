@@ -1,4 +1,4 @@
-import type { PackageManifest } from '@toolkit/metadata'
+import type { PackageManifest } from '@toolskit/metadata'
 
 export const packages: PackageManifest[] = [
   {
@@ -24,8 +24,8 @@ export const packages: PackageManifest[] = [
     description: 'Renderless components for VueUse',
     author: '',
     external: [
-      '@toolkit/core',
-      '@toolkit/shared',
+      '@toolskit/core',
+      '@toolskit/shared',
     ],
   },
 

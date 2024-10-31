@@ -90,7 +90,7 @@ catalogs:
 
 overrides:
   '@typescript-eslint/utils': ^8.6.0
-  '@toolkit/core': workspace:*
+  '@toolskit/core': workspace:*
   magic-string: ^0.30.11
   rollup: ^4.22.2
   vite: ^5.4.6
@@ -110,13 +110,13 @@ importers:
       '@rollup/plugin-replace':
         specifier: 'catalog:'
         version: 5.0.7(rollup@4.24.3)
-      '@toolkit/core':
+      '@toolskit/core':
         specifier: workspace:*
         version: link:packages/core
-      '@toolkit/metadata':
+      '@toolskit/metadata':
         specifier: workspace:*
         version: link:packages/metadata
-      '@toolkit/shared':
+      '@toolskit/shared':
         specifier: workspace:*
         version: link:packages/shared
       '@types/fs-extra':
@@ -203,10 +203,10 @@ importers:
 
   packages/components:
     dependencies:
-      '@toolkit/core':
+      '@toolskit/core':
         specifier: workspace:*
         version: link:../core
-      '@toolkit/shared':
+      '@toolskit/shared':
         specifier: workspace:*
         version: link:../shared
       vue-demi:
@@ -215,10 +215,10 @@ importers:
 
   packages/core:
     dependencies:
-      '@toolkit/metadata':
+      '@toolskit/metadata':
         specifier: workspace:*
         version: link:../metadata
-      '@toolkit/shared':
+      '@toolskit/shared':
         specifier: workspace:*
         version: link:../shared
       '@types/web-bluetooth':

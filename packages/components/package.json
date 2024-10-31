@@ -1,5 +1,5 @@
 {
-  "name": "@toolkit/components",
+  "name": "@toolskit/components",
   "version": "1.0.0",
   "author": "",
   "license": "MIT",
@@ -22,8 +22,8 @@
   "jsdelivr": "./index.iife.min.js",
   "types": "./index.d.cts",
   "dependencies": {
-    "@toolkit/core": "workspace:*",
-    "@toolkit/shared": "workspace:*",
+    "@toolskit/core": "workspace:*",
+    "@toolskit/shared": "workspace:*",
     "vue-demi": "catalog:"
   },
   "description": "Renderless components for VueUse"

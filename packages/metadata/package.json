@@ -1,8 +1,8 @@
 {
-  "name": "@toolkit/metadata",
+  "name": "@toolskit/metadata",
   "type": "module",
   "version": "1.0.0",
-  "description": "Metadata for ToolKit functions",
+  "description": "Metadata for ToolsKit functions",
   "author": "",
   "license": "MIT",
   "keywords": [

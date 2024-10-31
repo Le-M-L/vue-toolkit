@@ -1,4 +1,4 @@
 export * from './unrefElement'
 export * from './types'
-export * from '@toolkit/shared'
+export * from '@toolskit/shared'
 export * from './ssr-handlers'

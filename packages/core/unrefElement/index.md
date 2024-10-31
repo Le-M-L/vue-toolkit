@@ -10,7 +10,7 @@ Retrieves the underlying DOM element from a Vue ref or component instance
 
 ```vue
 <script setup>
-import { unrefElement } from '@toolkit/core'
+import { unrefElement } from '@toolskit/core'
 import { onMounted, ref } from 'vue'
 
 const div = ref() // will be bound to the <div> element

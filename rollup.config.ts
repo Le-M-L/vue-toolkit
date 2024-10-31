@@ -1,4 +1,4 @@
-import type { PackageIndexes } from '@toolkit/metadata'
+import type { PackageIndexes } from '@toolskit/metadata'
 import type { OutputOptions, Plugin, RollupOptions } from 'rollup'
 import type { Options as ESBuildOptions } from 'rollup-plugin-esbuild'
 import fs from 'node:fs'
@@ -33,9 +33,9 @@ const pluginPure = pure({
 
 const externals = [
   'vue-demi',
-  '@toolkit/shared',
-  '@toolkit/core',
-  '@toolkit/metadata',
+  '@toolskit/shared',
+  '@toolskit/core',
+  '@toolskit/metadata',
 ]
 
 function esbuildMinifer(options: ESBuildOptions) {
@@ -53,12 +53,12 @@ for (const { globals, name, external, submodules, iife, build, cjs, mjs, dts, ta
 
   const iifeGlobals = {
     'vue-demi': 'VueDemi',
-    '@toolkit/shared': 'ToolKit',
-    '@toolkit/core': 'ToolKit',
+    '@toolskit/shared': 'ToolsKit',
+    '@toolskit/core': 'ToolsKit',
     ...(globals || {}),
   }
 
-  const iifeName = 'ToolKit'
+  const iifeName = 'ToolsKit'
   const functionNames = ['index']
 
   if (submodules)
