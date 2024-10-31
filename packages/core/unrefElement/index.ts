@@ -1,6 +1,6 @@
-import type { MaybeRef, MaybeRefOrGetter } from '@toolskit/shared'
+import type { MaybeRef, MaybeRefOrGetter } from '@vue-toolskit/shared'
 import type { ComponentPublicInstance } from 'vue-demi'
-import { toValue } from '@toolskit/shared'
+import { toValue } from '@vue-toolskit/shared'
 
 export type VueInstance = ComponentPublicInstance
 export type MaybeElementRef<T extends MaybeElement = MaybeElement> = MaybeRef<T>

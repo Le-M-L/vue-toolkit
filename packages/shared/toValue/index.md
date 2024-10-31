@@ -11,7 +11,7 @@ Get the value of value/ref/getter.
 ## Usage
 
 ```ts
-import { toValue } from '@toolskit/core'
+import { toValue } from '@vue-toolskit/core'
 
 const foo = ref('hi')
 

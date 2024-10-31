@@ -1,4 +1,4 @@
-import type { PackageIndexes, ToolKitFunction, ToolKitPackage } from '@toolskit/metadata'
+import type { PackageIndexes, ToolKitFunction, ToolKitPackage } from '@vue-toolskit/metadata'
 import { join, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import fg from 'fast-glob'

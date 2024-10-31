@@ -1,5 +1,5 @@
-import type { PackageIndexes } from '@toolskit/metadata'
 import type { OutputOptions, Plugin, RollupOptions } from 'rollup'
+import type { PackageIndexes } from '@vue-toolskit/metadata'
 import type { Options as ESBuildOptions } from 'rollup-plugin-esbuild'
 import fs from 'node:fs'
 import { createRequire } from 'node:module'
@@ -33,9 +33,9 @@ const pluginPure = pure({
 
 const externals = [
   'vue-demi',
-  '@toolskit/shared',
-  '@toolskit/core',
-  '@toolskit/metadata',
+  '@vue-toolskit/shared',
+  '@vue-toolskit/core',
+  '@vue-toolskit/metadata',
 ]
 
 function esbuildMinifer(options: ESBuildOptions) {
@@ -53,12 +53,12 @@ for (const { globals, name, external, submodules, iife, build, cjs, mjs, dts, ta
 
   const iifeGlobals = {
     'vue-demi': 'VueDemi',
-    '@toolskit/shared': 'ToolsKit',
-    '@toolskit/core': 'ToolsKit',
+    '@vue-toolskit/shared': 'VueToolskit',
+    '@vue-toolskit/core': 'VueToolskit',
     ...(globals || {}),
   }
 
-  const iifeName = 'ToolsKit'
+  const iifeName = 'VueToolskit'
   const functionNames = ['index']
 
   if (submodules)
@@ -131,23 +131,23 @@ for (const { globals, name, external, submodules, iife, build, cjs, mjs, dts, ta
       ],
     })
 
-    // if (dts !== false) {
-    //   configs.push({
-    //     input,
-    //     output: [
-    //       { file: `packages/${name}/dist/${fn}.d.cts` },
-    //       { file: `packages/${name}/dist/${fn}.d.mts` },
-    //       { file: `packages/${name}/dist/${fn}.d.ts` }, // for node10 compatibility
-    //     ],
-    //     plugins: [
-    //       pluginDts,
-    //     ],
-    //     external: [
-    //       ...externals,
-    //       ...(external || []),
-    //     ],
-    //   })
-    // }
+    if (dts !== false) {
+      configs.push({
+        input,
+        output: [
+          { file: `packages/${name}/dist/${fn}.d.cts` },
+          { file: `packages/${name}/dist/${fn}.d.mts` },
+          { file: `packages/${name}/dist/${fn}.d.ts` }, // for node10 compatibility
+        ],
+        plugins: [
+          pluginDts,
+        ],
+        external: [
+          ...externals,
+          ...(external || []),
+        ],
+      })
+    }
 
     if (info?.component) {
       configs.push({

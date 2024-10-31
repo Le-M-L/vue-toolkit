@@ -1,5 +1,5 @@
 {
-  "name": "@toolskit/metadata",
+  "name": "@vue-toolskit/metadata",
   "type": "module",
   "version": "1.0.0",
   "description": "Metadata for ToolsKit functions",

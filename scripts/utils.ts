@@ -1,4 +1,4 @@
-import type { PackageIndexes } from '@toolskit/metadata'
+import type { PackageIndexes } from '@vue-toolskit/metadata'
 import { join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import fs from 'fs-extra'
@@ -74,14 +74,14 @@ export async function updateImport({ packages, functions }: PackageIndexes) {
     if (name === 'core') {
       imports.push(
         'export * from \'./types\'',
-        'export * from \'@toolskit/shared\'',
+        'export * from \'@vue-toolskit/shared\'',
         'export * from \'./ssr-handlers\'',
       )
     }
 
     if (name === 'nuxt') {
       imports.push(
-        'export * from \'@toolskit/core\'',
+        'export * from \'@vue-toolskit/core\'',
       )
     }
 

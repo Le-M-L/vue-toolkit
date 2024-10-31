@@ -1,4 +1,4 @@
-import { isClient } from '@toolskit/shared'
+import { isClient } from '@vue-toolskit/shared'
 
 export interface ConfigurableWindow {
   /*

@@ -1,5 +1,5 @@
 {
-  "name": "@toolskit/monorepo",
+  "name": "@vue-toolskit/monorepo",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -7,6 +7,7 @@
     "build:rollup": "cross-env NODE_OPTIONS=\"--max-old-space-size=6144\" rollup --config=rollup.config.ts --configPlugin=rollup-plugin-esbuild",
     "clean": "rimraf --glob dist types \"packages/*/dist\"",
     "types:fix": "esno scripts/fix-types.ts",
+    "publish:ci": "esno scripts/publish.ts",
     "test": "vitest"
   },
   "keywords": [],
@@ -16,9 +17,9 @@
     "@antfu/ni": "catalog:",
     "@rollup/plugin-json": "catalog:",
     "@rollup/plugin-replace": "catalog:",
-    "@toolskit/core": "workspace:*",
-    "@toolskit/metadata": "workspace:*",
-    "@toolskit/shared": "workspace:*",
+    "@vue-toolskit/core": "workspace:*",
+    "@vue-toolskit/metadata": "workspace:*",
+    "@vue-toolskit/shared": "workspace:*",
     "@types/fs-extra": "catalog:",
     "@types/node": "catalog:",
     "@types/web-bluetooth": "catalog:",
@@ -49,7 +50,7 @@
   },
   "resolutions": {
     "@typescript-eslint/utils": "catalog:",
-    "@toolskit/core": "workspace:*",
+    "@vue-toolskit/core": "workspace:*",
     "magic-string": "catalog:",
     "rollup": "catalog:",
     "vite": "catalog:",

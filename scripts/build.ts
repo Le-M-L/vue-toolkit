@@ -47,7 +47,7 @@ async function buildMetaFiles() {
 
     const packageJSON = await fs.readJSON(path.join(packageRoot, 'package.json'))
     for (const [key, value] of Object.entries(packageJSON.dependencies || {})) {
-      if (key.startsWith('@toolskit/')) {
+      if (key.startsWith('@vue-toolskit/')) {
         packageJSON.dependencies[key] = version
       }
       else if ((value as string).startsWith('catalog:')) {

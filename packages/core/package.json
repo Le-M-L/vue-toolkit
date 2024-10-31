@@ -1,5 +1,5 @@
 {
-  "name": "@toolskit/core",
+  "name": "@vue-toolskit/core",
   "version": "1.0.0",
   "author": "",
   "license": "MIT",
@@ -27,8 +27,8 @@
   "types": "./index.d.cts",
   "dependencies": {
     "@types/web-bluetooth": "catalog:",
-    "@toolskit/metadata": "workspace:*",
-    "@toolskit/shared": "workspace:*",
+    "@vue-toolskit/metadata": "workspace:*",
+    "@vue-toolskit/shared": "workspace:*",
     "vue-demi": "catalog:"
   },
   "description": "Collection of essential Vue Composition Utilities"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMouse } from '@toolskit/core'
+import { useMouse } from '@vue-toolskit/core'
 
 const { x, y } = useMouse()
 </script>
