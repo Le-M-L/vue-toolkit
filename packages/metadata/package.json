@@ -1,0 +1,29 @@
+{
+  "name": "@toolkit/metadata",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Metadata for ToolKit functions",
+  "author": "",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vue-use"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "files": [
+    "index.*"
+  ],
+  "scripts": {
+    "update": "esno scripts/update.ts"
+  }
+}

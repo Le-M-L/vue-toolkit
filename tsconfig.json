@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "jsx": "preserve",
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "webworker"],
+    "baseUrl": ".",
+    "rootDir": ".",
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@toolkit/core": ["./packages/core/index.ts"],
+      "@toolkit/core/*": ["./packages/core/*"],
+      "@toolkit/docs-utils": ["./packages/.vitepress/plugins/utils.ts"],
+      "@toolkit/integrations": ["./packages/integrations/index.ts"],
+      "@toolkit/metadata": ["./packages/metadata/index.ts"],
+      "@toolkit/math": ["./packages/math/index.ts"],
+      "@toolkit/shared": ["./packages/shared/index.ts"],
+      "@toolkit/shared/*": ["./packages/shared/*"]
+    },
+    "resolveJsonModule": true,
+    "types": [
+      "vitest",
+      "@types/web-bluetooth"
+    ],
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "declarationDir": "./types",
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "*.ts",
+    "packages",
+    "packages/.vitepress/components/*.vue",
+    "packages/.vitepress/*.ts",
+    "meta",
+    "vitest.config.ts"
+  ],
+  "exclude": [
+    "unocss.config.ts",
+    "node_modules",
+    "**/*.md",
+    "**/dist",
+    "packages/.test",
+    "packages/_docs"
+  ]
+}

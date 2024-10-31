@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@toolkit/core": "file:../../packages/core/dist",
+    "@toolkit/metadata": "file:../../packages/metadata/dist",
+    "@toolkit/shared": "file:../../packages/shared/dist",
+    "vite": "^5.4.6"
+  },
+  "resolutions": {
+    "@toolkit/core": "file:../../packages/core/dist",
+    "@toolkit/metadata": "file:../../packages/metadata/dist",
+    "@toolkit/shared": "file:../../packages/shared/dist"
+  }
+}

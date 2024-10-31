@@ -1,0 +1,30 @@
+{
+  "name": "@toolkit/components",
+  "version": "1.0.0",
+  "author": "",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vue-use",
+    "utils"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "unpkg": "./index.iife.min.js",
+  "jsdelivr": "./index.iife.min.js",
+  "types": "./index.d.cts",
+  "dependencies": {
+    "@toolkit/core": "workspace:*",
+    "@toolkit/shared": "workspace:*",
+    "vue-demi": "catalog:"
+  },
+  "description": "Renderless components for VueUse"
+}
