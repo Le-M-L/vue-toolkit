@@ -82,6 +82,26 @@
     "./useRequest": {
       "import": "./useRequest.mjs",
       "require": "./useRequest.cjs"
+    },
+    "./useStore": {
+      "import": "./useStore.mjs",
+      "require": "./useStore.cjs"
+    },
+    "./typings": {
+      "import": "./typings.mjs",
+      "require": "./typings.cjs"
+    },
+    "./useColor": {
+      "import": "./useColor.mjs",
+      "require": "./useColor.cjs"
+    },
+    "./usePreferences": {
+      "import": "./usePreferences.mjs",
+      "require": "./usePreferences.cjs"
+    },
+    "./usePreference": {
+      "import": "./usePreference.mjs",
+      "require": "./usePreference.cjs"
     }
   },
   "main": "./index.cjs",
@@ -99,6 +119,15 @@
     },
     "axios": {
       "optional": true
+    },
+    "pinia": {
+      "optional": true
+    },
+    "pinia-plugin-persistedstate": {
+      "optional": true
+    },
+    "vue-router": {
+      "optional": true
     }
   },
   "dependencies": {
@@ -107,7 +136,13 @@
     "@vue-toolskit/integrations": "workspace:*",
     "@intlify/core-base": "catalog:",
     "vue-i18n": "catalog:",
-    "vue-demi": "catalog:"
+    "@ctrl/tinycolor": "catalog:",
+    "@vueuse/core": "catalog:",
+    "vue-demi": "catalog:",
+    "vue-router": "catalog:",
+    "axios": "catalog:",
+    "pinia-plugin-persistedstate": "catalog:",
+    "pinia": "catalog:"
   },
   "devDependencies": {
     "axios": "catalog:"

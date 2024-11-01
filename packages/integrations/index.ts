@@ -1,2 +1,5 @@
+export * from './useColor'
 export * from './useLocale'
+export * from './usePreference'
 export * from './useRequest'
+export * from './useStore'

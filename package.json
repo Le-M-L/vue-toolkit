@@ -45,7 +45,8 @@
     "vite": "catalog:",
     "vitest": "catalog:",
     "vue": "catalog:",
-    "vue-demi": "^0.14.10",
+    "@vueuse/core": "catalog:",
+    "vue-demi": "catalog:",
     "vue2": "catalog:",
     "yaml": "catalog:"
   },

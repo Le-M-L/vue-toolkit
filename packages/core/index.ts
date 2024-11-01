@@ -1,5 +1,4 @@
 export * from './unrefElement'
-export * from './use-simple-locale'
 export * from './types'
 export * from '@vue-toolskit/shared'
 export * from './ssr-handlers'

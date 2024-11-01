@@ -1,16 +1,24 @@
 
 import  { i18n, loadLocaleMessages, loadLocalesMap, setupI18n } from './src'
 
-export type { CompileError } from '@intlify/core-base';
+import type { CompileError } from '@intlify/core-base';
 
-export type { Locale } from 'vue-i18n';
+import type { Locale } from 'vue-i18n';
 
 
-export type {
+import type {
    ImportLocaleFn,
    LocaleSetupOptions,
    SupportedLanguagesType,
 } from './src';
+
+export interface useLocales {
+  ImportLocaleFn: ImportLocaleFn;
+  CompileError: CompileError;
+  Locale: Locale;
+  LocaleSetupOptions: LocaleSetupOptions;
+  SupportedLanguagesType: SupportedLanguagesType;
+}
 
 export const useLocales = () => {
   const $t = i18n.global.t;
@@ -19,6 +27,6 @@ export const useLocales = () => {
       i18n,
       loadLocaleMessages,
       loadLocalesMap,
-      setupI18n
+      setupI18n,
   };
 };

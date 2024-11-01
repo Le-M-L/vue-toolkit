@@ -10,7 +10,6 @@ import type {
 import { type App, unref } from 'vue-demi';
 import { createI18n } from 'vue-i18n';
 
-import { useSimpleLocale } from './use-simple-locale';
 import zh from './langs/zh-CN.json'
 import en from './langs/en-US.json'
 
@@ -21,7 +20,6 @@ const i18n = createI18n({
   messages: {},
 });
 
-const { setSimpleLocale } = useSimpleLocale();
 
 const localesMap = {
     'zh-CN': async () => ({ default: zh}),
@@ -82,7 +80,6 @@ async function loadLocaleMessages(lang: SupportedLanguagesType) {
   if (unref(i18n.global.locale) === lang) {
     return setI18nLanguage(lang);
   }
-  setSimpleLocale(lang);
 
   const message = await localesMap[lang]?.();
 

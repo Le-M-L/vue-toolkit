@@ -113,16 +113,5 @@ class RequestClient {
   }
 }
 
-export function bindMethods(instance) {
-  const prototype = Object.getPrototypeOf(instance);
-  const propertyNames = Object.getOwnPropertyNames(prototype);
-  propertyNames.forEach((propertyName) => {
-      const descriptor = Object.getOwnPropertyDescriptor(prototype, propertyName);
-      const propertyValue = instance[propertyName];
-      if (typeof propertyValue === "function" && propertyName !== "constructor" && descriptor && !descriptor.get && !descriptor.set) {
-          instance[propertyName] = propertyValue.bind(instance);
-      }
-  });
-}
 
 export { RequestClient };

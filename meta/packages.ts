@@ -37,13 +37,24 @@ export const packages: PackageManifest[] = [
     external: [
       'axios',
       'vue-i18n',
+      'vue-router',
+      'pinia-plugin-persistedstate',
+      'pinia',
       '@vue-toolskit/core',
       '@vue-toolskit/shared',
       '@vue-toolskit/integrations',
+      '@vueuse/core',
+      '@ctrl/tinycolor'
     ],
     globals: {
       'axios': 'axios',
-      'vue-i18n': 'vue-i18n'
+      'vue-i18n': 'VueI18n',
+      'vue-router': 'VueRouter',
+      'pinia': 'pinia',
+      'pinia-plugin-persistedstate': 'PiniaPluginPersistedstate',
+      '@vue-toolskit/integrations': 'VueToolskit',
+      '@vueuse/core': 'core',
+      '@ctrl/tinycolor':'tinycolor'
     },
   },
 
