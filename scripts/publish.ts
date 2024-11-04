@@ -4,7 +4,7 @@ import { consola } from 'consola'
 import { packages } from '../meta/packages'
 import { version } from '../package.json'
 
-execSync('npm run build', { stdio: 'inherit' })
+// execSync('npm run build', { stdio: 'inherit' })
 
 let command = 'npm publish --access public'
 

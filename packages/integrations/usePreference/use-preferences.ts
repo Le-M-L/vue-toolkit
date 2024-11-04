@@ -6,6 +6,9 @@ import { preferencesManager } from './preferences';
 import { isDarkTheme } from './update-css-variables';
 
 function usePreferences() {
+  if(!preferencesManager) {
+    new Error('preferencesManager 未初始化')
+  }
   const preferences = preferencesManager.getPreferences();
   const initialPreferences = preferencesManager.getInitialPreferences();
   /**

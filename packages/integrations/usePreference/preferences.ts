@@ -222,5 +222,9 @@ class PreferenceManager {
   }
 }
 
-const preferencesManager = new PreferenceManager();
-export { PreferenceManager, preferencesManager };
+let preferencesManager:PreferenceManager ;
+function createPreferences() {
+  preferencesManager = new PreferenceManager();
+}
+
+export { PreferenceManager, preferencesManager, createPreferences };
