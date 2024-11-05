@@ -1,8 +1,9 @@
-import type { AxiosRequestConfig, AxiosResponse } from 'axios';
+import type { AxiosRequestConfig } from 'axios';
 
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { FileUploader } from './uploader';
+import { Result } from '../types';
 
 describe('fileUploader', () => {
   let fileUploader: FileUploader;
@@ -22,7 +23,7 @@ describe('fileUploader', () => {
   it('should upload a file and return the response', async () => {
     const url = 'https://example.com/upload';
     const file = new File(['file content'], 'test.txt', { type: 'text/plain' });
-    const mockResponse: AxiosResponse = {
+    const mockResponse: Result = {
       config: {} as any,
       data: { success: true },
       headers: {},
@@ -50,7 +51,7 @@ describe('fileUploader', () => {
   it('should merge provided config with default config', async () => {
     const url = 'https://example.com/upload';
     const file = new File(['file content'], 'test.txt', { type: 'text/plain' });
-    const mockResponse: AxiosResponse = {
+    const mockResponse: Result = {
       config: {} as any,
       data: { success: true },
       headers: {},

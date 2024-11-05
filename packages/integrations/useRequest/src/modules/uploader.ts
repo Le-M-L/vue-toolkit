@@ -1,6 +1,7 @@
-import type { AxiosRequestConfig, AxiosResponse } from 'axios';
+import type { AxiosRequestConfig } from 'axios';
 
 import type { RequestClient } from '../request-client';
+import { Result } from '../types';
 
 class FileUploader {
   private client: RequestClient;
@@ -13,7 +14,7 @@ class FileUploader {
     url: string,
     data: { file: Blob | File } & Record<string, any>,
     config?: AxiosRequestConfig,
-  ): Promise<AxiosResponse> {
+  ): Promise<Result> {
     const formData = new FormData();
 
     Object.entries(data).forEach(([key, value]) => {

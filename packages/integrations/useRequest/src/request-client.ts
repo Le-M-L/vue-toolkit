@@ -1,7 +1,6 @@
 import type {
   AxiosInstance,
   AxiosRequestConfig,
-  AxiosResponse,
   CreateAxiosDefaults,
 } from 'axios';
 
@@ -12,10 +11,12 @@ import axios from 'axios';
 import { FileDownloader } from './modules/downloader';
 import { InterceptorManager } from './modules/interceptor';
 import { FileUploader } from './modules/uploader';
-import { type RequestClientOptions } from './types';
+import { RequestOptions, type RequestClientOptions, Result } from './types';
 
 class RequestClient {
   private readonly instance: AxiosInstance;
+  private readonly requestOptions?: RequestOptions;
+  public forEach: InterceptorManager['forEach']
 
   public addRequestInterceptor: InterceptorManager['addRequestInterceptor'];
   public addResponseInterceptor: InterceptorManager['addResponseInterceptor'];
@@ -40,7 +41,8 @@ class RequestClient {
       // 默认超时时间
       timeout: 10_000,
     };
-    const { ...axiosConfig } = options;
+    const {requestOptions, ...axiosConfig } = options;
+    this.requestOptions = requestOptions;
     const requestConfig = merge(axiosConfig, defaultConfig);
     this.instance = axios.create(requestConfig);
 
@@ -48,6 +50,7 @@ class RequestClient {
 
     // 实例化拦截器管理器
     const interceptorManager = new InterceptorManager(this.instance);
+    this.forEach = interceptorManager.forEach.bind(interceptorManager);
     this.addRequestInterceptor =
       interceptorManager.addRequestInterceptor.bind(interceptorManager);
     this.addResponseInterceptor =
@@ -64,15 +67,15 @@ class RequestClient {
   /**
    * DELETE请求方法
    */
-  public delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
-    return this.request<T>(url, { ...config, method: 'DELETE' });
+  public delete<T = any>(url: string, config?: AxiosRequestConfig, options?: RequestOptions): Promise<T> {
+    return this.request<T>(url, { ...config, method: 'DELETE' }, options);
   }
 
   /**
    * GET请求方法
    */
-  public get<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
-    return this.request<T>(url, { ...config, method: 'GET' });
+  public get<T = any>(url: string, config?: AxiosRequestConfig, options?: RequestOptions): Promise<T> {
+    return this.request<T>(url, { ...config, method: 'GET' }, options);
   }
 
   /**
@@ -82,8 +85,8 @@ class RequestClient {
     url: string,
     data?: any,
     config?: AxiosRequestConfig,
-  ): Promise<T> {
-    return this.request<T>(url, { ...config, data, method: 'POST' });
+    options?: RequestOptions): Promise<T> {
+    return this.request<T>(url, { ...config, data, method: 'POST' }, options);
   }
 
   /**
@@ -93,20 +96,21 @@ class RequestClient {
     url: string,
     data?: any,
     config?: AxiosRequestConfig,
-  ): Promise<T> {
-    return this.request<T>(url, { ...config, data, method: 'PUT' });
+    options?: RequestOptions): Promise<T> {
+    return this.request<T>(url, { ...config, data, method: 'PUT' }, options);
   }
 
   /**
    * 通用的请求方法
    */
-  public async request<T>(url: string, config: AxiosRequestConfig): Promise<T> {
+  public async request<T>(url: string, config: AxiosRequestConfig, options?:RequestOptions): Promise<T> {
     try {
-      const response: AxiosResponse<T> = await this.instance({
+    const requestOptions: RequestOptions = Object.assign({}, this.requestOptions, options);
+    const response: Result<T> = await this.instance({
         url,
         ...config,
       });
-      return response as T;
+      return this.forEach(response, requestOptions) as T;
     } catch (error: any) {
       throw error.response ? error.response.data : error;
     }
