@@ -31,7 +31,8 @@ function createRequestClient(baseURL: string) {
      * 刷新token逻辑
      */
     async function doRefreshToken() {
-        
+
+        return ''
     }
 
     function formatToken(token: null | string) {
@@ -40,6 +41,8 @@ function createRequestClient(baseURL: string) {
     // 请求头处理
     client.addRequestInterceptor({
         fulfilled: async (config) => {
+            config.headers.sign = 'bu';
+            config.headers.Authorization = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInB2IjoxLCJpYXQiOjE3MzA2OTg2NDEsImV4cCI6MTczMTMwMzQ0MX0.DDo4Hdp7v3XbC4jdwUY2AjZ6zKPZtZKVqI8pDhcKtAs';
             return config;
         },
     });

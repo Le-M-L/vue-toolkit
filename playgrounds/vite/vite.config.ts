@@ -14,6 +14,17 @@ export default defineConfig(({ command }) => ({
           '@vue-toolskit/shared': resolve(__dirname, '../../packages/shared/index.ts'),
         },
       },
+      server:{
+        proxy:{
+        '/sun': {
+          target: 'https://taiyangapp.com',
+          ws: true,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/sun/, '/sun'),
+          secure: false
+        }
+        }
+      },
   build: {
     minify: false,
     rollupOptions: {
