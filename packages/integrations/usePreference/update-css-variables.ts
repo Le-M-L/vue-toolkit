@@ -10,7 +10,7 @@ import { BUILT_IN_THEME_PRESETS } from './constants';
  */
 function executeUpdateCSSVariables(
   variables: { [key: string]: string },
-  id = '__vben-styles__',
+  id = '__ymm-styles__',
 ): void {
   // 获取或创建内联样式表元素
   const styleElement =
@@ -146,4 +146,4 @@ function isDarkTheme(theme: string) {
   return dark;
 }
 
-export { isDarkTheme, updateCSSVariables };
+export { isDarkTheme, updateCSSVariables, executeUpdateCSSVariables };

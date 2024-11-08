@@ -6,6 +6,7 @@ import { preferencesManager, createPreferences } from './preferences';
 import * as constants from './constants';
 export type * as Preferences from './types';
 import { usePreferences } from './use-preferences';
+import { useAntdDesignTokens, useElementPlusDesignTokens, useNaiveDesignTokens } from './use-design-tokens';
 
 export const usePreference = () => {
   if(!preferencesManager) {
@@ -38,6 +39,9 @@ export const usePreference = () => {
     preferencesManager,
     resetPreferences,
     updatePreferences,
+    useElementPlusDesignTokens: () => useElementPlusDesignTokens(preferences),
+    useAntdDesignTokens: () => useAntdDesignTokens(preferences),
+    useNaiveDesignTokens: () => useNaiveDesignTokens(preferences),
     ...constants,
     usePreferences
   }
