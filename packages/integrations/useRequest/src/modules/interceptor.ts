@@ -21,7 +21,7 @@ interface Fulfilleds<T = any> {
     response: Result<T>,
     options: RequestOptions,
   ) => Result | Promise<Result>;
-  rejected?: (error: any) => any;
+  rejected?: (error: any, options: RequestOptions) => any;
 }
 
 
@@ -57,7 +57,7 @@ class InterceptorManager {
         } catch (err) {
           // 检查 rejected 是否存在
           if (handler.rejected) {
-            return handler.rejected(err);
+            return handler.rejected(err, options);
           }
           throw err; // 如果不存在，抛出错误
         }
@@ -65,7 +65,7 @@ class InterceptorManager {
       .catch((err) => {
         // 检查 rejected 是否存在
         if (handler.rejected) {
-          return handler.rejected(err);
+          return handler.rejected(err, options);
         }
         throw err; // 如果不存在，抛出错误
       });

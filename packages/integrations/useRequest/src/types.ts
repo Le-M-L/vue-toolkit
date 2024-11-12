@@ -30,6 +30,8 @@ type RequestContentType =
     urlPrefix?: string;
     // 错误消息提示类型
     errorMessageMode?: ErrorMessageMode;
+    // 成功消息提示类型
+    successMessageMode?: ErrorMessageMode;
     // 是否添加时间戳
     joinTime?: boolean;
     ignoreCancelToken?: boolean;
@@ -61,12 +63,13 @@ interface Result<T = any, D = any> extends AxiosResponse<T, D> {
 interface ResponseInterceptorConfig<T = any> {
   fulfilled?: (
     response: Result<T>,
+    options: RequestOptions
   ) => Result | Promise<Result>;
-  rejected?: (error: any) => any;
+  rejected?: (error: any, options: RequestOptions) => any;
 }
 
 
-type MakeErrorMessageFn = (message: string, error: any) => void;
+type MakeErrorMessageFn = (message: string, error: any, options: RequestOptions) => void;
 
 interface HttpResponse<T = any> {
   /**

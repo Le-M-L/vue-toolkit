@@ -1,4 +1,4 @@
-import { reactive, watch } from 'vue';
+import { reactive, watch } from 'vue-demi';
 import { convertToRgb } from '@vue-toolskit/integrations'
 import {  usePreferences } from './use-preferences';
 import { executeUpdateCSSVariables } from './update-css-variables';

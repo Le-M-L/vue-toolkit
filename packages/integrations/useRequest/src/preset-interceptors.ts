@@ -1,5 +1,5 @@
 import type { RequestClient } from './request-client';
-import type { MakeErrorMessageFn, ResponseInterceptorConfig } from './types';
+import type { MakeErrorMessageFn, ResponseInterceptorConfig, RequestOptions } from './types';
 import { useLocales } from '@vue-toolskit/integrations';
 
 import axios from 'axios';
@@ -75,7 +75,7 @@ export const errorMessageResponseInterceptor = (
   makeErrorMessage?: MakeErrorMessageFn,
 ): ResponseInterceptorConfig => {
   return {
-    rejected: (error: any) => {
+    rejected: (error: any, options: RequestOptions) => {
       if (axios.isCancel(error)) {
         return Promise.reject(error);
       }
@@ -88,7 +88,7 @@ export const errorMessageResponseInterceptor = (
         errMsg = $t('fallback.http.requestTimeout');
       }
       if (errMsg) {
-        makeErrorMessage?.(errMsg, error);
+        makeErrorMessage?.(errMsg, error, options);
         return Promise.reject(error);
       }
 
@@ -120,7 +120,7 @@ export const errorMessageResponseInterceptor = (
           errorMessage = $t('fallback.http.internalServerError');
         }
       }
-      makeErrorMessage?.(errorMessage, error);
+      makeErrorMessage?.(errorMessage, error, options);
       return Promise.reject(error);
     },
   };
